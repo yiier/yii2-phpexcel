@@ -80,14 +80,14 @@ Exporting data into an excel file.
 
 // export data only one worksheet.
 
-\moonland\phpexcel\Excel::widget([
+\yiier\phpexcel\Excel::widget([
 	'models' => $allModels,
 	'mode' => 'export', //default value as 'export'
 	'columns' => ['column1','column2','column3'], //without header working, because the header will be get label from attribute label. 
 	'header' => ['column1' => 'Header Column 1','column2' => 'Header Column 2', 'column3' => 'Header Column 3'], 
 ]);
 
-\moonland\phpexcel\Excel::export([
+\yiier\phpexcel\Excel::export([
 	'models' => $allModels, 
 	'columns' => ['column1','column2','column3'], //without header working, because the header will be get label from attribute label. 
 	'header' => ['column1' => 'Header Column 1','column2' => 'Header Column 2', 'column3' => 'Header Column 3'],
@@ -95,7 +95,7 @@ Exporting data into an excel file.
 
 // export data with multiple worksheet.
 
-\moonland\phpexcel\Excel::widget([
+\yiier\phpexcel\Excel::widget([
 	'isMultipleSheet' => true, 
 	'models' => [
 		'sheet1' => $allModels1, 
@@ -116,7 +116,7 @@ Exporting data into an excel file.
 	],
 ]);
 
-\moonland\phpexcel\Excel::export([
+\yiier\phpexcel\Excel::export([
 	'isMultipleSheet' => true, 
 	'models' => [
 		'sheet1' => $allModels1, 
@@ -145,7 +145,7 @@ Columns in string mode valid layout are 'attribute:format:header:footer(TODO)'.
 ```php
 <?php
   
-\moonland\phpexcel\Excel::export([
+\yiier\phpexcel\Excel::export([
    	'models' => Post::find()->all(),
       	'columns' => [
       		'author.name:text:Author Name',
@@ -180,9 +180,9 @@ Import file excel and return into an array.
 ```php
 <?php
 
-$data = \moonland\phpexcel\Excel::import($fileName, $config); // $config is an optional
+$data = \yiier\phpexcel\Excel::import($fileName, $config); // $config is an optional
 
-$data = \moonland\phpexcel\Excel::widget([
+$data = \yiier\phpexcel\Excel::widget([
 		'mode' => 'import', 
 		'fileName' => $fileName, 
 		'setFirstRecordAsKeys' => true, // if you want to set the keys of record column with first record, if it not set, the header with use the alphabet column on excel. 
@@ -190,7 +190,7 @@ $data = \moonland\phpexcel\Excel::widget([
 		'getOnlySheet' => 'sheet1', // you can set this property if you want to get the specified sheet from the excel data with multiple worksheet.
 	]);
 
-$data = \moonland\phpexcel\Excel::import($fileName, [
+$data = \yiier\phpexcel\Excel::import($fileName, [
 		'setFirstRecordAsKeys' => true, // if you want to set the keys of record column with first record, if it not set, the header with use the alphabet column on excel. 
 		'setIndexSheetByName' => true, // set this if your excel data with multiple worksheet, the index of array will be set with the sheet name. If this not set, the index will use numeric. 
 		'getOnlySheet' => 'sheet1', // you can set this property if you want to get the specified sheet from the excel data with multiple worksheet.
@@ -199,7 +199,7 @@ $data = \moonland\phpexcel\Excel::import($fileName, [
 
 // import data with multiple file.
 
-$data = \moonland\phpexcel\Excel::widget([
+$data = \yiier\phpexcel\Excel::widget([
 	'mode' => 'import', 
 	'fileName' => [
 		'file1' => $fileName1, 
@@ -211,7 +211,7 @@ $data = \moonland\phpexcel\Excel::widget([
 		'getOnlySheet' => 'sheet1', // you can set this property if you want to get the specified sheet from the excel data with multiple worksheet.
 	]);
 
-$data = \moonland\phpexcel\Excel::import([
+$data = \yiier\phpexcel\Excel::import([
 	'file1' => $fileName1, 
 	'file2' => $fileName2, 
 	'file3' => $fileName3,
