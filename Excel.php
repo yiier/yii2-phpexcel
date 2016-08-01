@@ -300,15 +300,12 @@ class Excel extends \yii\base\Widget
      * instance. If this property is not set, the "formatter" application component will be used.
      */
     public $formatter;
-
-
     /**
-     * @var boolean define the column autosize
+     * @var boolean define the column auto size
      */
     public $autoSize = false;
-
     /**
-     * @var int set start Column num
+     * @var integer set start column num
      */
     public $setStartColNum = 1;
 

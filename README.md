@@ -43,6 +43,10 @@ string `$getOnlySheet` is a sheet name to getting the data. This is only get the
 
 array|Formatter `$formatter` the formatter used to format model attribute values into displayable texts. This can be either an instance of [[Formatter]] or an configuration array for creating the [[Formatter]] instance. If this property is not set, the "formatter" application component will be used.
 
+boolean `$autoSize` define the column auto size.
+
+integer `$setStartColNum` to set start column num, define 1.
+
 Installation
 ------------
 
